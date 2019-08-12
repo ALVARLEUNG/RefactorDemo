@@ -126,5 +126,66 @@ public class GildedRoseTest {
         assertEquals(-2, item.sellIn);
     }
 
+    @Test
+    public void should_return_item_quality_50_and_sellIn_negative_2_given_item_has_quality_49_and_sellIn_negative_1_name_Aged_Brie() {
+        Item item = new Item("Aged Brie", -1, 49);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+        gildedRose.updateQuality();
+
+        assertEquals(50, item.quality);
+        assertEquals(-2, item.sellIn);
+    }
+
+    @Test
+    public void should_return_item_quality_50_and_sellIn_negative_2_given_item_has_quality_48_and_sellIn_negative_1_name_Aged_Brie() {
+        Item item = new Item("Aged Brie", -1, 48);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+        gildedRose.updateQuality();
+
+        assertEquals(50, item.quality);
+        assertEquals(-2, item.sellIn);
+    }
+
+    @Test
+    public void should_return_item_quality_0_and_sellIn_negative_2_given_item_has_quality_48_and_sellIn_negative_1_name_BackstagePassesToATAFKAL80ETCConcert() {
+        Item item = new Item("Backstage passes to a TAFKAL80ETC concert", -1, 48);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+        gildedRose.updateQuality();
+
+        assertEquals(0, item.quality);
+        assertEquals(-2, item.sellIn);
+    }
+
+    @Test
+    public void should_return_item_quality_0_and_sellIn_negative_2_given_item_has_quality_0_and_sellIn_negative_1_name_Rose() {
+        Item item = new Item("Rose", -1, 0);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+        gildedRose.updateQuality();
+
+        assertEquals(0, item.quality);
+        assertEquals(-2, item.sellIn);
+    }
+
+    @Test
+    public void should_return_item_quality_50_and_sellIn_negative_2_given_item_has_quality_48_and_sellIn_negative_1_name_SulfurasHandOfRagnaros() {
+        Item item = new Item("Sulfuras, Hand of Ragnaros", -1, 48);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+        gildedRose.updateQuality();
+
+        assertEquals(48, item.quality);
+        assertEquals(-1, item.sellIn);
+    }
+
+    @Test
+    public void should_return_item_quality_50_and_sellIn_negative_2_given_item_has_quality_48_and_sellIn_negative_1_name_Rose() {
+        Item item = new Item("Rose", -1, 48);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+        gildedRose.updateQuality();
+
+        assertEquals(46, item.quality);
+        assertEquals(-2, item.sellIn);
+    }
+
+
 
 }
