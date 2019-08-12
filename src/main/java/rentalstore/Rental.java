@@ -9,6 +9,10 @@ public class Rental {
         this.dayRented = dayRented;
     }
 
+    public double getThisAmountByMovieType() {
+        return movie.calculateThisAmount(this.getDayRented());
+    }
+
     public Movie getMovie() {
         return movie;
     }
