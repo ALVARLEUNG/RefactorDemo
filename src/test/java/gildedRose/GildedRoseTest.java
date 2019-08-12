@@ -116,5 +116,15 @@ public class GildedRoseTest {
         assertEquals(9, item.sellIn);
     }
 
+    @Test
+    public void should_return_item_quality_50_and_sellIn_negative_2_given_item_has_quality_50_and_sellIn_negative_1_name_Aged_Brie() {
+        Item item = new Item("Aged Brie", -1, 50);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+        gildedRose.updateQuality();
+
+        assertEquals(50, item.quality);
+        assertEquals(-2, item.sellIn);
+    }
+
 
 }
