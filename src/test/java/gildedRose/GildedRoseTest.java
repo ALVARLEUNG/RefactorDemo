@@ -177,12 +177,22 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void should_return_item_quality_50_and_sellIn_negative_2_given_item_has_quality_48_and_sellIn_negative_1_name_Rose() {
+    public void should_return_item_quality_46_and_sellIn_negative_2_given_item_has_quality_48_and_sellIn_negative_1_name_Rose() {
         Item item = new Item("Rose", -1, 48);
         GildedRose gildedRose = new GildedRose(new Item[]{item});
         gildedRose.updateQuality();
 
         assertEquals(46, item.quality);
+        assertEquals(-2, item.sellIn);
+    }
+
+    @Test
+    public void should_return_item_quality_44_and_sellIn_negative_2_given_item_has_quality_48_and_sellIn_negative_1_name_Conjured() {
+        Item item = new Item("Conjured", -1, 48);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+        gildedRose.updateQuality();
+
+        assertEquals(44, item.quality);
         assertEquals(-2, item.sellIn);
     }
 

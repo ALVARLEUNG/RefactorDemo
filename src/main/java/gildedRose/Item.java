@@ -5,6 +5,7 @@ public class Item {
     private final String AGED_BRIE = "Aged Brie";
     private final String BPTATC = "Backstage passes to a TAFKAL80ETC concert";
     private final String SHOR = "Sulfuras, Hand of Ragnaros";
+    private final String CONJURED = "Conjured";
 
     public String name;
 
@@ -32,6 +33,9 @@ public class Item {
                 new BackstageItemQuality().updateQuality(this);
                 break;
             case SHOR:
+                break;
+            case CONJURED:
+                new ConjuredItemQuality().updateQuality(this);
                 break;
             default:
                 new NormalItemQuality().updateQuality(this);
